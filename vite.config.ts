@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -27,13 +26,3 @@ export default defineConfig({
     host: true,
   },
 })
-```
-
----
-
-### **5. Commit les changements**
-
-1. Scrolle en bas de la page
-2. Dans le champ "Commit message", écris :
-```
-   Fix: Remove PWA plugin to fix deployment
