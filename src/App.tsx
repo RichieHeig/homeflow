@@ -10,8 +10,8 @@ import Tasks from '@/pages/Tasks';
 import Members from '@/pages/Members';
 import TaskFlow from '@/pages/TaskFlow';
 import Settings from '@/pages/Settings';
-import LoginPassword from '@/pages/login-password';
-import SignUp from '@/pages/signup';
+import LoginPassword from '@/pages/LoginPassword';
+import SignUp from '@/pages/SignUp';
 
 import AppLayout from '@/components/layout/AppLayout';
 import { AlertCircle } from 'lucide-react';
