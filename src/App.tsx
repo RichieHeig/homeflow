@@ -12,11 +12,7 @@ import TaskFlow from '@/pages/TaskFlow';
 import Settings from '@/pages/Settings';
 
 import AppLayout from '@/components/layout/AppLayout';
-import InstallPrompt from '@/components/pwa/InstallPrompt';
-import UpdatePrompt from '@/components/pwa/UpdatePrompt';
-import NetworkStatus from '@/components/pwa/NetworkStatus';
 import { AlertCircle } from 'lucide-react';
-
 function App() {
   if (!supabaseEnabled) {
     const error = getSupabaseError();
@@ -113,9 +109,6 @@ function App() {
           </Route>
         </Routes>
 
-        <InstallPrompt />
-        <UpdatePrompt />
-        <NetworkStatus />
       </BrowserRouter>
     </ToastProvider>
   );
