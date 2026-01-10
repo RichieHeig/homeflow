@@ -10,9 +10,12 @@ import Tasks from '@/pages/Tasks';
 import Members from '@/pages/Members';
 import TaskFlow from '@/pages/TaskFlow';
 import Settings from '@/pages/Settings';
+import LoginPassword from '@/pages/login-password';
+import SignUp from '@/pages/signup';
 
 import AppLayout from '@/components/layout/AppLayout';
 import { AlertCircle } from 'lucide-react';
+
 function App() {
   if (!supabaseEnabled) {
     const error = getSupabaseError();
@@ -84,11 +87,15 @@ function App() {
     <ToastProvider>
       <BrowserRouter>
         <Routes>
+          {/* Routes d'authentification */}
+          <Route path="/login" element={<LoginPassword />} />
+          <Route path="/signup" element={<SignUp />} />
+          
           <Route
             path="/"
             element={
               !user ? (
-                <Onboarding />
+                <Navigate to="/login" replace />
               ) : !household ? (
                 <Navigate to="/onboarding" replace />
               ) : (
@@ -99,7 +106,7 @@ function App() {
           <Route path="/onboarding" element={<Onboarding />} />
 
           <Route
-            element={user && household ? <AppLayout /> : <Navigate to="/" replace />}
+            element={user && household ? <AppLayout /> : <Navigate to="/login" replace />}
           >
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/tasks" element={<Tasks />} />
